@@ -6,11 +6,44 @@
   <title>Q4 Drill 2</title>
 </head>
 <body>
-  
+  <h1>Heat Index Checker</h1>
+
+  <button class="btn btn-info" onclick="checkHI()">
+    Check</button>
+
 <script>
-  function teamRank(){ 
-  var temp = ""
-  }
+  function checkHI(){ 
+ var temp = document.getElementById("temp").value;
+      var humid;
+      var HeatIndex;
+  
+      var status = "";
+  
+      switch(true){
+        case (HeatIndex <= 27): //compare
+          status = "Comfortable / Cool";
+          break;
+        case (HeatIndex < 33): //compare
+          status = "Warm";
+          break;
+        case (HeatIndex < 38): //compare
+          status = "Hot";
+          break;
+        case (HeatIndex < 42): //compare
+          status = "Very Hot / Caution";
+          break;
+        case (HeatIndex >= 42): //compare
+          status = "Extreme Heat / Danger";
+          break;
+        default:
+         status = "";
+      }
+
+      alert("Heat Index:" + HeatIndex.toFixed(1) + "\n" + "Status" + status);
+    } 
+
+
+    </script>
 </script>
 
 </body>
