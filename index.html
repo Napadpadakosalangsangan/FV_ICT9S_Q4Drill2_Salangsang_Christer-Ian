@@ -8,14 +8,18 @@
 <body>
   <h1>Heat Index Checker</h1>
 
+  <p>Degree in °C</p>
+  <input type="text" id="temp" class="form-control" placeholder="Input degree value">
+  <p> Humidity in %</p>
+  <input type="text" id="humid" class="form-control" placeholder="Input percentage value">
   <button class="btn btn-info" onclick="checkHI()">
     Check</button>
 
 <script>
   function checkHI(){ 
  var temp = document.getElementById("temp").value;
-      var humid;
-      var HeatIndex;
+      var humid = document.getElementById("humid").value;
+      var HeatIndex = temp + (0.33 * humid) - 4;
   
       var status = "";
   
@@ -39,7 +43,7 @@
          status = "";
       }
 
-      alert("Heat Index:" + HeatIndex.toFixed(1) + "\n" + "Status" + status);
+      alert("Heat Index : " + HeatIndex.toFixed(1) + "\n" + "Status : " + status);
     } 
 
 
